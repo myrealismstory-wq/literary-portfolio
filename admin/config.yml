@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: myrealismstory-wq/literary-portfolio
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "آثار ادبی"
+    folder: "src/content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان اثر", name: "title", widget: "string" }
+      - { label: "دسته‌بندی", name: "category", widget: "select", options: ["شعر", "داستان", "یادداشت"] }
+      - { label: "تاریخ انتشار", name: "date", widget: "datetime" }
+      - { label: "متن اثر", name: "body", widget: "markdown" }
